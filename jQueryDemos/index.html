@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Jquery API Calls</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div>
+        <pre>
+            Eno: <input id="eno" />
+
+          Ename: <input id="ename" />
+
+            Age: <input id="age" />
+
+                 <button id="btnSave">Save</button>
+        </pre>
+    </div>
+    <div>
+        <table id="tbl" style="border:1px solid black">
+            <thead>
+                <tr style="border-bottom:0.5px solid wheat">
+                    <th style="width:100px;text-align:left;">Eno</th>
+                    <th style="width:100px;text-align:left;">Ename</th>
+                    <th style="width:100px;text-align:left;">Age</th>
+                    <th style="width:100px;text-align:left;">Action</th>
+                </tr>
+            </thead>
+            <tbody id="tblBody">
+
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <script type="text/template" id="trTemplate">
+        <tr style="height:30px;"><td>{eno}</td><td>{ename}</td><td>{age}</td><td><button class="edit-button" data-eno="{eno}">Edit</button></td></tr>
+        </script>
+    </div>
+</body>
+
+</html>
