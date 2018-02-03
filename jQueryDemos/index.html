@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <title>Jquery API Calls</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -39,6 +41,55 @@
         <tr style="height:30px;"><td>{eno}</td><td>{ename}</td><td>{age}</td><td><button class="edit-button" data-eno="{eno}">Edit</button></td></tr>
         </script>
     </div>
+    <script>
+        $(document).ready(function () {
+            var emps = [];
+            $("#tblBody").on("click", ".edit-button", function (e) {
+                var eno = $(this).attr("data-eno");
+                var emp = emps.find(v => v.Eno == eno);
+                $("#eno").val(emp.Eno);
+                $("#ename").val(emp.Ename);
+                $("#age").val(emp.Age);
+            })
+
+            getEmployees();
+            function getEmployees() {
+                $.ajax({
+                    url: "http://localhost:9999/api/employees",
+                    type: "GET",
+                    contentType: "application/json",
+                    success: function (r) {
+                        emps = r;
+                        buildTableBody(r);
+                    },
+                    error: function (e) {
+                        console.log(e);
+                    }
+                });
+            }
+
+            function buildTableBody(arr) {
+                var temp = $("#trTemplate").html();
+
+                var trs = "";
+
+                $.each(arr, function (i, emp) {
+                    var tr = temp.replace(/{eno}|{ename}|{age}/gi, function (v) {
+                        switch (v) {
+                            case "{eno}": return emp.Eno;
+                            case "{ename}": return emp.Ename;
+                            case "{age}": return emp.Age;
+                        }
+                    });
+
+                    trs += tr;
+                });
+                $("#tblBody").html(trs);
+            }
+        })
+
+
+    </script>
 </body>
 
 </html>
