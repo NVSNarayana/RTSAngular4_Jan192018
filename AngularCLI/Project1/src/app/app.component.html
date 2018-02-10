@@ -1,24 +1,23 @@
 <table>
   <tr>
     <td>
-      <!-- <app-menu></app-menu> -->
-      <table>
-        <tr>
-          <td>
-            <button (click)="handleEmployees(event)">Employees</button>
-          </td>
-          <td>
-            <button (click)="handleStudents(event)">Students</button>
-          </td>
-      
-        </tr>
-      </table>
+      <app-menu (menuClickEvent)="handleMenuClick($event);"></app-menu>
     </td>
   </tr>
   <tr>
     <td>
-<div *ngIf="selectedComponent=='Employees'"><employees></employees></div>
+      <!-- <div *ngIf="selectedComponent=='Employees'">
+        <app-employees [caption]="'Employee Details'"></app-employees>
+      </div>
 
-<div *ngIf="selectedComponent=='Students'"><app-students></app-students></div></td>
+      <div *ngIf="selectedComponent=='Students'">
+        <app-students [caption]="'Student Details'"></app-students>
+      </div> -->
+
+      <div *ngIf="selectedComponent=='Students' || selectedComponent=='Employees'">
+          <!-- <app-stu-emp [caption]="captionP" [no]="noP" [name]="nameP" [age]="ageP"></app-stu-emp> -->
+          <app-stu-emp [stuEmpUIModel]="stuEmpUI"></app-stu-emp>
+        </div>
+    </td>
   </tr>
 </table>
