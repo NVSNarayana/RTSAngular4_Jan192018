@@ -6,17 +6,17 @@
   </tr>
   <tr>
     <td>
-      <!-- <div *ngIf="selectedComponent=='Employees'">
+      <div *ngIf="selectedComponent=='Employees'">
         <app-employees [caption]="'Employee Details'"></app-employees>
       </div>
 
       <div *ngIf="selectedComponent=='Students'">
         <app-students [caption]="'Student Details'"></app-students>
-      </div> -->
+      </div>
 
       <div *ngIf="selectedComponent=='Students' || selectedComponent=='Employees'">
           <!-- <app-stu-emp [caption]="captionP" [no]="noP" [name]="nameP" [age]="ageP"></app-stu-emp> -->
-          <app-stu-emp [stuEmpUIModel]="stuEmpUI"></app-stu-emp>
+          <!-- <app-stu-emp [stuEmpUIModel]="stuEmpUI"></app-stu-emp> -->
         </div>
     </td>
   </tr>
