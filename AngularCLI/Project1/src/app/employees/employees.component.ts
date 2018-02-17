@@ -12,4 +12,8 @@ export class EmployeesComponent implements OnInit {
   ngOnInit() {
   }
 
+  submit(){
+    console.log("submit function from employee.ts");
+  }
+
 }

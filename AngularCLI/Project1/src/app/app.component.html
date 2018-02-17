@@ -1,3 +1,7 @@
+<app-single-ton-test></app-single-ton-test>
+<button (click)="updateServiceDateString()">update service DateString from appcomponent</button>
+<button (click)="ReadServiceDateString()">Read Service Date String</button>
+
 <table>
   <tr>
     <td>
@@ -7,7 +11,9 @@
   <tr>
     <td>
       <div *ngIf="selectedComponent=='Employees'">
-        <app-employees [caption]="'Employee Details'"></app-employees>
+        <app-employees #empComponent [caption]="empCaption"></app-employees>
+        <!-- <button (click)="onSubmit(); empComponent.submit();">Submit</button> -->
+        <button (click)="onSubmit()">Submit</button>
       </div>
 
       <div *ngIf="selectedComponent=='Students'">
@@ -21,3 +27,4 @@
     </td>
   </tr>
 </table>
+<app-parent></app-parent>

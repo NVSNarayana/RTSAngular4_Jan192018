@@ -8,6 +8,10 @@ import { StudentsComponent } from './students/students.component';
 import { MenuComponent } from './menu/menu.component';
 import { AddressComponent } from './address/address.component';
 import { StuEmpComponent } from './stu-emp/stu-emp.component';
+import { ParentComponent } from './projection/parent/parent.component';
+import { ChildComponent } from './projection/parent/child/child.component';
+import { SingleTonTestComponent } from './service-demos/single-ton-test/single-ton-test.component';
+import { EmployeeService } from './services/employee.service';
 
 @NgModule({
   declarations: [
@@ -16,12 +20,15 @@ import { StuEmpComponent } from './stu-emp/stu-emp.component';
     StudentsComponent,
     MenuComponent,
     AddressComponent,
-    StuEmpComponent
+    StuEmpComponent,
+    ParentComponent,
+    ChildComponent,
+    SingleTonTestComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

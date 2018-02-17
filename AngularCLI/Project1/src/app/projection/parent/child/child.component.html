@@ -1,0 +1,60 @@
+<h2>Single Projection</h2>
+<table>
+  <caption>
+    <ng-content></ng-content>
+  </caption>
+  <tbody>
+    <tr>
+      <td>Eno: </td>
+      <td>
+        <input />
+      </td>
+    </tr>
+    <tr>
+      <td>Ename: </td>
+      <td>
+        <input />
+      </td>
+    </tr>
+    <tr>
+      <td>Age: </td>
+      <td>
+        <input />
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <ng-content></ng-content>
+  </tfoot>
+</table>
+
+
+<h2>Multi Projection</h2>
+<table>
+  <caption>
+    <ng-content select=".header"></ng-content>
+  </caption>
+  <tbody>
+    <tr>
+      <td>Eno: </td>
+      <td>
+        <input />
+      </td>
+    </tr>
+    <tr>
+      <td>Ename: </td>
+      <td>
+        <input />
+      </td>
+    </tr>
+    <tr>
+      <td>Age: </td>
+      <td>
+        <input />
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <ng-content select=".footer"> </ng-content>
+  </tfoot>
+</table>

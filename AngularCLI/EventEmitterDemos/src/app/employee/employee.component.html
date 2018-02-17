@@ -1,5 +1,5 @@
 <table>
-  <caption><b>{{caption}}</b></caption>
+  <caption><b>Employee Details</b></caption>
   <tbody>
     <tr>
       <td>Eno: </td><td><input /></td>
@@ -11,7 +11,12 @@
           <td>Age: </td><td><input /></td>
         </tr>
         <tr>
-            <!-- <td colspan="2" align="right"><button (click)="submit();">Submit</button></td> -->
+            <td colspan="2" align="right">
+              <app-address></app-address>
+            </td>
           </tr>
   </tbody>
 </table>
+<div>
+  <button (click)="emitEmployee()">Emit Employee</button>
+</div>

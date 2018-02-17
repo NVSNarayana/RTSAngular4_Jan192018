@@ -1,0 +1,24 @@
+<div>
+  <div>
+    <h2>This is Parent Component </h2>
+    <div>Info about parent component</div>
+  </div>
+  <div>
+    <h2>This is Child Component with single projection</h2>
+    <app-child>
+      <div><b>Employee Details</b></div>
+    </app-child>
+  </div>
+  <div>
+    <h2>This is Child Component with multi projection </h2>
+    <app-child>
+      <div class="header"><b>{{header}}</b></div>
+      <div class="footer"><b>Employee Details footer</b></div>
+      
+    </app-child>
+  </div>
+</div>
+
+<div>
+  <button (click)="updateHeader()">Update Header</button>
+</div>
