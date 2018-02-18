@@ -1,0 +1,16 @@
+<input [ngModel]="name" />
+<input [(ngModel)]="name" />
+{{name}}
+<select [(ngModel)]="qualification">
+  <option value="">--Select--</option>
+  <option value="SSLC">SSLC</option>
+  <option value="PUC">PUC</option>
+  <option value="Graduate">Graduate</option>
+  <option value="PG">PG</option>
+  
+</select>
+
+{{qualification}}
+<span>IsManager:<input type="checkbox" [(ngModel)]="isManager" /></span>
+<br/>
+{{isManager}}

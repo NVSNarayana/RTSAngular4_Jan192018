@@ -1,0 +1,26 @@
+<!-- <ul>
+  <li *ngFor="let item of arrStr">
+    {{ item | uppercase}}
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let item of asynData | async">
+    {{ item | lowercase}}
+  </li>
+</ul>
+
+<div>Employee Model</div>
+{{emp |json}}
+
+<div>
+  {{addressModel |json}}
+</div> -->
+
+<div>
+  {{addressModel | addressPipe:'city,state' | lowercase}}
+</div>
+
+<div [innerHTML]="htmlProp | safeHtml">
+ 
+</div>
