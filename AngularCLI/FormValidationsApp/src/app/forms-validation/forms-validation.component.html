@@ -36,8 +36,8 @@
         <td>Higher Qualification:</td>
         <td>
           <select formControlName="higherQualifiation">
-            <option value="">--Select--</option>
-            <option *ngFor="let o of qualifications" value="o.value">
+            <option value="" [selected]="true">--Select--</option>
+            <option *ngFor="let o of qualifications" [ngValue]="o.value">
               {{o.text}}
             </option>
           </select>
@@ -52,8 +52,8 @@
       <tr>
         <td colspan="2">
           <!-- <input [disabled]="empFormGroup.invalid" type="submit" value="Submit"> -->
-          <input  type="submit" value="Submit">
-          
+          <input type="submit" value="Submit">
+
         </td>
       </tr>
     </table>

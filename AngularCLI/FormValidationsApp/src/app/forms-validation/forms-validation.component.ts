@@ -13,7 +13,9 @@ export class FormsValidationComponent implements OnInit {
   constructor(private empValidationSvc: EmpValidationsService) { }
 
   ngOnInit() {
-    this.empFormGroup = this.empValidationSvc.setFormValidations();
+    //this.empFormGroup = this.empValidationSvc.setFormValidations();
+    this.empFormGroup = Constants.setFormValidations();
+    
   }
 
   // setFormValidations() {

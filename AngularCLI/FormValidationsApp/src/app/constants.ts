@@ -1,7 +1,7 @@
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
-export const Constants = {
-    empValidations: function () {
+export class Constants {
+    static setFormValidations(): FormGroup {
         return new FormGroup({
             'ename': new FormControl(null, [Validators.required, Validators.minLength(5)]),
             'age': new FormControl(null, [Validators.required]),
