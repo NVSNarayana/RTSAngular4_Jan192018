@@ -1,0 +1,44 @@
+<div *ngIf="showDiv">
+  This is *ngIf (Angular 5 ngIf and else R&D)
+</div>
+<button (click)="clickHere()">Toggle Div</button>
+
+<table border="1">
+  <!-- <tr>
+    <td>Sno</td>
+    <td>Sname</td>
+    <td>Age</td>
+    <td>Marks</td>
+  </tr> -->
+  <!-- <tr *ngFor="let s of students" style="height:30px;" [ngClass]="{'clsRed clsBlue':s.marks<35, clsGreen: s.marks>90}">
+    <td style="width:100px">{{s.sno}}</td>
+    <td style="width:100px" [innerHTML]="s.sname"></td>
+    <td style="width:100px">{{s.age}}</td>
+    <td style="width:100px">{{s.marks}}</td>
+  </tr> -->
+  <!-- <tr *ngFor="let s of students" style="height:30px;" [class.clsRed]="s.marks<35" [class.clsGreen]="s.marks>90">
+  <td style="width:100px">{{s.sno}}</td>
+  <td style="width:100px" [innerHTML]="s.sname"></td>
+  <td style="width:100px">{{s.age}}</td>
+  <td style="width:100px">{{s.marks}}</td>
+  </tr> -->
+
+  <!-- <tr *ngFor="let s of students" style="height:30px;" [ngStyle]="{'background-color':s.marks<35?'red':none}">
+    <td style="width:100px">{{s.sno}}</td>
+    <td style="width:100px" [innerHTML]="s.sname"></td>
+    <td style="width:100px">{{s.age}}</td>
+    <td style="width:100px">{{s.marks}}</td>
+  </tr> -->
+<!-- 
+  <tr [attr.id]="getRowId(s.sno)" *ngFor="let s of students" style="height:30px;" [style.backgroundColor]="s.marks<35?'red':none">
+    <td style="width:100px">{{s.sno}}</td>
+    <td style="width:100px" [innerHTML]="s.sname"></td>
+    <td style="width:100px">{{s.age}}
+      <div [hidden]="s.age<25">[Managers]</div>
+    </td>
+    <td style="width:100px">{{s.marks}}</td>
+  </tr> -->
+
+</table>
+
+<app-forms-validation></app-forms-validation>

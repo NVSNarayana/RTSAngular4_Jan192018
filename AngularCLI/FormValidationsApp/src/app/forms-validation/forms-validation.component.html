@@ -1,0 +1,62 @@
+<div style="color:red;" *ngIf="empFormGroup.invalid">
+
+  <h3>Validation Summary</h3>
+  <ul>
+    <li *ngIf="empFormGroup.controls.ename.errors?.required">ename Required</li>
+    <li *ngIf="empFormGroup.controls.ename.errors?.minlength">ename minlength 5</li>
+    <li *ngIf="empFormGroup.controls.age.errors?.required">age Required</li>
+    <li *ngIf="empFormGroup.controls.age.errors?.agerange">age must be between 20 to 50</li>
+    <li *ngIf="empFormGroup.controls.address.errors?.required">address1 Required</li>
+    <li *ngIf="empFormGroup.controls.higherQualifiation.errors?.required">Qualification Required</li>
+
+  </ul>
+</div>
+<div>
+  <form [formGroup]="empFormGroup" (ngSubmit)="onSubmit()">
+    <table>
+      <tr>
+        <td>Ename:</td>
+        <td>
+          <input formControlName="ename" />
+        </td>
+      </tr>
+      <tr>
+        <td>Age:</td>
+        <td>
+          <input formControlName="age" />
+        </td>
+      </tr>
+      <tr>
+        <td>Salary:</td>
+        <td>
+          <input formControlName="salary" />
+        </td>
+      </tr>
+      <tr>
+        <td>Higher Qualification:</td>
+        <td>
+          <select formControlName="higherQualifiation">
+            <option value="">--Select--</option>
+            <option *ngFor="let o of qualifications" value="o.value">
+              {{o.text}}
+            </option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>address:</td>
+        <td>
+          <input formControlName="address" />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <!-- <input [disabled]="empFormGroup.invalid" type="submit" value="Submit"> -->
+          <input  type="submit" value="Submit">
+          
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+<div>{{empFormGroup.value | json}}</div>
