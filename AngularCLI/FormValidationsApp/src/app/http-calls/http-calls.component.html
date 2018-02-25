@@ -1,0 +1,30 @@
+<div>
+  <table>
+    <tr>
+      <td>Eno</td>
+      <td>Ename</td>
+      <td>Age</td>
+      <td>Salary</td>
+      <td>Address</td>
+      <td>Qualification</td>
+    </tr>
+    <tr *ngFor="let e of emps">
+      <td>{{e.Eno}}</td>
+      <td>{{e.Ename}}</td>
+      <td>{{e.Age}}</td>
+      <td>{{e.Salary}}</td>
+      <td>{{e.Address}}</td>
+      <td>{{e.Qualification}}</td>
+    </tr>
+
+  </table>
+</div>
+<div>
+  Enter Eno: <input [(ngModel)]="eno"/>
+  <button (click)="getEmp()">Get Employee</button>
+  <div>{{emp | json}}</div>
+</div>
+<div>
+  <button (click)="postEmp()">Post Employee</button>
+  
+</div>
