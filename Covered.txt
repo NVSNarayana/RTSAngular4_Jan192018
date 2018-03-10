@@ -1,0 +1,37 @@
+Angular CLI
+@Components
+Feb 3:
+@Input()
+@Output()
+Feb 17:
+# refernce variables
+@ViewChild()
+Single Projection
+Multi Projection
+Services  using @injectable()
+Single-ton
+EventEmiiter using Services
+Feb 18:
+Pipes    
+@Pipe() Pre-defined & User-defined
+ModelBinding: 1-way, 2-way
+Feb 24:
+*ngIf, *ngFor, [hidden], [ngClass]/[class.name],[ngStyle]/[style.prop]
+[attr.name]
+Model Driven Validation
+Template Driven Validation (R&D)
+Feb 25:
+HttpModule to API Calls
+Not coverd
+Http Calls error handling
+<ng-container *ngComponentOutlet="dynamicComponent"></ng-container>
+Routing
+Routing Gaurds
+Modules
+include jquery, bootstrap
+deployment
+
+
+
+
+
