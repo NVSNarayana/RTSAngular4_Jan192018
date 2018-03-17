@@ -1,7 +1,7 @@
-<div *ngIf="showDiv">
+<div *ngIf="!showDiv">
   This is *ngIf (Angular 5 ngIf and else R&D)
 </div>
-<button (click)="clickHere()">Toggle Div</button>
+<button  *ngIf="!showDiv" (click)="clickHere()">Toggle Div</button>
 
 <table border="1">
   <!-- <tr>
@@ -43,4 +43,5 @@
 
 <!-- <app-forms-validation></app-forms-validation> -->
 
-<app-http-calls></app-http-calls>
+<!-- <app-http-calls></app-http-calls> -->
+<app-ngcontainer-demo></app-ngcontainer-demo>

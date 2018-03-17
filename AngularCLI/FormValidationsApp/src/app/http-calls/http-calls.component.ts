@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeModel } from '../models/employee-model';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Rx';
-import { map } from 'rxjs/operators';
+import { Observable, Observer } from 'rxjs/Rx';
+import { map, catchError } from 'rxjs/operators';
 
 
 @Component({
@@ -22,6 +22,25 @@ export class HttpCallsComponent implements OnInit {
       this.emps = v;
     })
   }
+  getPosts() {
+    // var getApi = this.httpClient.get("https://jsonplaceholder.typicode.com/posts1");
+    // getApi.subscribe(
+    //   posts => { console.log(posts); },
+    //   err => { console.log("Error funcation"); console.log(err); },
+    //   () => { console.log("Completed") });
+
+    var getApi = this.httpClient.get("https://jsonplaceholder.typicode.com/posts").pipe(catchError((err) => {
+      console.log("Errror");
+      console.log(err);
+      return Observable.throw(err);
+    }));
+
+    getApi.subscribe(posts => { console.log(posts); });
+    //  this.httpClient.get("https://jsonplaceholder.typicode.com/posts").subscribe(v=>{
+
+    //   console.log(v);
+    // });
+  }
 
   getEmp() {
     this.getEmployee(this.eno).subscribe(v => {
@@ -39,7 +58,7 @@ export class HttpCallsComponent implements OnInit {
   getEmployee(eno: number): Observable<object> {
     return this.httpClient.get("http://localhost:50093/api/employee/" + eno);
   }
-  postEmployee(emp: EmployeeModel):Observable<any> {
+  postEmployee(emp: EmployeeModel): Observable<any> {
     emp.Address = "BTM";
     emp.Age = 34;
     emp.Ename = "Post Emp";
@@ -47,13 +66,13 @@ export class HttpCallsComponent implements OnInit {
     emp.Qualification = "BE";
     emp.Salary = 50000;
 
-   return this.httpClient.post("http://localhost:50093/api/employee",emp)
+    return this.httpClient.post("http://localhost:50093/api/employee", emp)
   }
 
-  postEmp(){
-    this.postEmployee(new EmployeeModel()).subscribe(v=>{
+  postEmp() {
+    this.postEmployee(new EmployeeModel()).subscribe(v => {
       console.log(v);
-        console.log("Posted successfully");
+      console.log("Posted successfully");
     });
   }
 

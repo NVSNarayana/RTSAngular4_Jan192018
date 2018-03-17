@@ -17,14 +17,20 @@ Pipes
 ModelBinding: 1-way, 2-way
 Feb 24:
 *ngIf, *ngFor, [hidden], [ngClass]/[class.name],[ngStyle]/[style.prop]
-[attr.name]
+[attr.name] 
 Model Driven Validation
 Template Driven Validation (R&D)
 Feb 25:
 HttpModule to API Calls
 Not coverd
-Http Calls error handling
+Http Calls error handling -- //inside subscribe & catchError(outside subscribe)
+
+<ng-container *ngTemplateOutlet="templateNumber==0?t1:t2">
+<ng-template #t1> </ng-template>
+*ngIf-else with templates:   (Angular 4 onwords)
 <ng-container *ngComponentOutlet="dynamicComponent"></ng-container>
+<div *ngIf="templateNumber==1; then t1; else t2">this is ignored</div>
+<div *ngIf="templateNumber==1;else t2">This content not from Template</div>
 Routing
 Routing Gaurds
 Modules

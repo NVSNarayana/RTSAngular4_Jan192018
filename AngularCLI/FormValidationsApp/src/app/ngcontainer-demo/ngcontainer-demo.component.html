@@ -1,0 +1,35 @@
+Enter Template Number:
+<input type="number" [(ngModel)]="templateNumber" (keyup)="onKeyup($event);" />
+<ng-container *ngTemplateOutlet="templateNumber==1?t1:(templateNumber==2?t2:t3)">
+</ng-container>
+
+<ng-template #t1>
+  <div>This is First Template</div>
+</ng-template>
+
+<ng-template #t2>
+  <div>
+    This is 2nd Template
+  </div>
+</ng-template>
+
+<ng-template #t3>
+  <div> This is 3rd Template</div>
+</ng-template>
+
+<div *ngIf="templateNumber==1; then t1 else t2">
+  This info will be ignored
+</div>
+
+<div *ngIf="templateNumber==1; else t1">
+  This info will be executed
+</div>
+
+<div>
+  <button (click)="loadEmpComp()">Load Emp Component</button>
+  <button (click)="loadStuComp()">Load Student Component</button>
+</div>
+<div style="border:1px solid black; width:400px;height:300px;">
+  <div>In appmodule.ts entrycomponets required</div>
+  <ng-container *ngComponentOutlet="dynamicComponent"></ng-container>
+</div>
