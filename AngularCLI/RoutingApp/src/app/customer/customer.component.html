@@ -1,3 +1,20 @@
-<p>
-  customer works!
-</p>
+<table>
+    <caption>Customer</caption>
+    <tr>
+      <th>Cno</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let c of custs">
+      <td>{{c.cno}}</td>
+      <td>{{c.cname}}</td>
+      <td>{{c.age}}</td>
+      <!-- <td><a [routerLink]="['/customers/details']" [queryParams]="{ cno: c.cno,cname:c.cname }">Get All Details</a></td> -->
+      <td><button (click)="getAllDetails(c)">Get All Details</button></td>
+    </tr>
+  </table>
+
+  <div>
+    <router-outlet></router-outlet>
+  </div>

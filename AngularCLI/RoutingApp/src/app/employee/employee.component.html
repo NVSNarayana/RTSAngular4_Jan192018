@@ -1,3 +1,15 @@
-<p>
-  employee works!
-</p>
+<table>
+  <caption>Employees</caption>
+  <tr>
+    <th>Eno</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let emp of emps">
+    <td>{{emp.eno}}</td>
+    <td>{{emp.ename}}</td>
+    <td>{{emp.age}}</td>
+    <td><a [routerLink]="['/employees', emp.eno]">Get All Details</a></td>
+  </tr>
+</table>

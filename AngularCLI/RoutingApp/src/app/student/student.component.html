@@ -1,3 +1,19 @@
-<p>
-  student works!
-</p>
+<table>
+    <caption>Students</caption>
+    <tr>
+      <th>Sno</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let s of studs">
+      <td>{{s.sno}}</td>
+      <td>{{s.sname}}</td>
+      <td>{{s.age}}</td>
+      <td><a [routerLink]="['/students/details', s.sno]">Get All Details</a></td>
+    </tr>
+  </table>
+
+  <div>
+    <router-outlet></router-outlet>
+  </div>

@@ -13,6 +13,7 @@ export class EmployeeDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.activRoute.params.subscribe(v=>{
+      console.log(v);
       this.routeParam= v["id"];
     })
   }

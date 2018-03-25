@@ -33,6 +33,10 @@ Http Calls error handling -- //inside subscribe & catchError(outside subscribe)
 <div *ngIf="templateNumber==1;else t2">This content not from Template</div>
 Routing
 Routing Gaurds
+dirctives:
+componet directives: regular component
+Attribute : [ngStyle], [hidden]
+structural: *ngIf, *ngFor, *ngSwitchCase
 Modules
 include jquery, bootstrap
 deployment
