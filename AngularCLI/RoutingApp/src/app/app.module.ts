@@ -15,6 +15,7 @@ import { CustomerDetailsComponent } from './customer/customer-details/customer-d
 import { StudentAuthGuard } from './guards/student-auth.guard';
 import { AttrCustDirectiveComponent } from './attr-cust-directive/attr-cust-directive.component';
 import { BtnHilightDirective } from './directive/btn-hilight.directive';
+import { EmpDetailsResolveService } from './services/emp-details-resolve.service';
 
 const routes: Route[] = [
   { path: "", redirectTo: "students", pathMatch: "full" },
@@ -25,7 +26,7 @@ const routes: Route[] = [
     ]
   },
   { path: "employees", component: EmployeeComponent },
-  { path: "employees/:id", component: EmployeeDetailsComponent },
+  { path: "employees/:id", component: EmployeeDetailsComponent, resolve:{"emp": EmpDetailsResolveService} },
 
   {
     path: "customers", component: CustomerComponent, children: [
@@ -54,7 +55,7 @@ const routes: Route[] = [
     BrowserModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [StudentAuthGuard],
+  providers: [StudentAuthGuard, EmpDetailsResolveService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

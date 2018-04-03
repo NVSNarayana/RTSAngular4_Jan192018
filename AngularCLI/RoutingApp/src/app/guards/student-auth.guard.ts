@@ -10,7 +10,7 @@ export class StudentAuthGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     //take login user details
     console.log("Stu Gurad");
-    let user = new Users("abc", "employee");
+    let user = new Users("abc", "student");
     if (user.userType == "student" || user.userType== "admin") {
       return true;
     }

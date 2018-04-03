@@ -22,7 +22,7 @@ Model Driven Validation
 Template Driven Validation (R&D)
 Feb 25:
 HttpModule to API Calls
-Not coverd
+
 Http Calls error handling -- //inside subscribe & catchError(outside subscribe)
 
 <ng-container *ngTemplateOutlet="templateNumber==0?t1:t2">
@@ -33,11 +33,14 @@ Http Calls error handling -- //inside subscribe & catchError(outside subscribe)
 <div *ngIf="templateNumber==1;else t2">This content not from Template</div>
 Routing
 Routing Gaurds
+Route Resolves 
 dirctives:
 componet directives: regular component
 Attribute : [ngStyle], [hidden]
 structural: *ngIf, *ngFor, *ngSwitchCase
-Modules
+
+Not coverd
+Modules, lazy load modules
 include jquery, bootstrap
 deployment
 

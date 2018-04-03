@@ -1,0 +1,7 @@
+.menu-container{
+    list-style-type: none;
+}
+.menu-container li{
+    padding-bottom:10px;
+    margin-left: -15px;
+}
